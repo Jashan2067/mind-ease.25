@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>MindEase — Your Mental Wellness Companion</title>
+  <link rel="icon" type="image/png" href="logo-1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="background-images.css">
+  <link rel="stylesheet" href="meditation.css">
+  <meta name="theme-color" content="#5B6A8B">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-content">
+        <img src="logo-1.png" alt="MindEase Logo" class="logo-img">
+        <h1 class="mind">MindEase</h1>
+      </div>
+
+      <div class="header-actions">
+        <button id="darkToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+
+    <p class="tagline">Your space for calm, positivity, and self-growth</p>
+
+    <nav class="main-nav" role="tablist" aria-label="Main App Navigation">
+      <button class="tablink active" role="tab" aria-selected="true" data-tab="home">Home</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="songs">Vibe Out</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="videos">Short Films</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="articles">Articles</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="meditation">Meditation</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="journal">Journal</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="analysis">Analytics</button>
+      <button class="tablink" role="tab" aria-selected="false" data-tab="chat"
+        onclick="window.location.href='http://127.0.0.1:5000'">Clara</button>
+      <button class="tablink" onclick="location.href='survey.html'">Survey</button>
+      <button class="tablink" onclick="location.href='game.html'">Games</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="tabcontent hero active" role="tabpanel" aria-labelledby="home-tab">
+      <div class="hero-content card">
+        <h2>Welcome to MindEase</h2>
+        <p class="hero-sub">Small daily practices to bring calm and clarity. Start with a breathing exercise or a quick
+          journal entry.</p>
+        <div class="hero-cta">
+          <button class="primary" data-tab-target="journal">Start Journaling</button>
+          <button class="secondary" data-tab-target="meditation">Try 5-minute Calm</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="songs" class="tabcontent" role="tabpanel" aria-labelledby="songs-tab">
+      <div class="card">
+        <h2> Every Moment Counts!</h2>
+        <p>Listen and lift your mood with uplifting ambient tracks.</p>
+        <ul class="media-list">
+          <li>Over the mountains
+            <audio controls preload="none" aria-label="Happy Vibes Song">
+              <source src="m1.mpeg" type="audio/mpeg">
+            </audio>
+          </li>
+          <li>Beach side
+            <audio controls preload="none" aria-label="Calm Breeze Song">
+              <source src="m3.mpeg" type="audio/mpeg">
+            </audio>
+          </li>
+          <li>Blue sky
+            <audio controls preload="none" aria-label="Calm Breeze Song">
+              <source src="m4.mpeg" type="audio/mpeg">
+            </audio>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="videos" class="tabcontent" role="tabpanel" aria-labelledby="videos-tab">
+      <div class="card">
+        <h2> Wanna know more?</h2>
+        <p>Short, inspiring videos for a mindful break.</p>
+        <div class="video-container">
+          <video controls preload="none" aria-label="Short Film 1">
+            <source src="1.mp4" type="video/mp4">
+          </video>
+          <video controls preload="none" aria-label="Short Film 2">
+            <source src="5.mp4" type="video/mp4">
+          </video>
+          <video controls preload="none" aria-label="Short Film 3">
+            <source src="3.mp4" type="video/mp4">
+          </video>
+          <video controls preload="none" aria-label="Short Film 4">
+            <source src="4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="tabcontent" role="tabpanel" aria-labelledby="articles-tab">
+      <div class="card">
+        <h2> Read & Reflect</h2>
+        <article>
+          <p><strong>“You can’t control the waves, but you can learn to surf.”</strong> — Jon Kabat-Zinn</p>
+          <p>Explore articles about balance, focus, and emotional strength. We recommend starting with our
+            <strong>'Mindful Morning'</strong> guide.
+          </p>
+          <p><strong>The world moves fast, but your mind doesn’t have to. Peace is something you build slowly — through
+              small breaths, gentle thoughts, and kinder self-talk. When you learn to rest, you learn to grow.</strong>
+            — Inspired by Rupi Kaur</p>
+          <p><strong>Some days you bloom, some days you break — both are part of becoming. Mental wellness means
+              allowing yourself to feel without judgement and trusting that every step, forward or backward, still
+              counts.</strong>
+            — Inspired by Atticus</p>
+          <p><strong>In a noisy world, choose softness for yourself. Speak kindly, rest deeply, and let go of the
+              pressure to be perfect. Your mind deserves the same care you offer others.</strong>
+            — Inspired by Nayyirah Waheed</p>
+          <button id="readMoreBtn" class="secondary small">Read More</button>
+          <div id="moreArticles" class="hidden">
+            <p><strong>Healing doesn't mean the damage never existed. It means the damage no longer controls your
+                life. You are allowed to take up space, to feel your emotions, and to prioritize your
+                peace.</strong>
+              — Inspired by Unknown</p>
+            <p><strong>Your mental health is a priority, not a luxury. Taking time to heal, rest, and recharge isn't
+                selfish — it's necessary. You can't pour from an empty cup.</strong>
+              — Inspired by Sam Levenson</p>
+            <p><strong>Sometimes the most productive thing you can do is rest. Your worth isn't measured by how busy
+                you are, but by how well you take care of yourself.</strong>
+              — Inspired by Unknown</p>
+            <p><strong>Be gentle with yourself. You're doing the best you can with what you have. Progress isn't
+                always linear, and that's perfectly okay.</strong>
+              — Inspired by Karen Salmansohn</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="meditation" class="tabcontent" role="tabpanel" aria-labelledby="meditation-tab">
+      <div class="meditation-container">
+        <div class="meditation-header">
+          <h3 class="meditation-brand">mindease</h3>
+          <p class="meditation-subtitle">01 GRIDRIFT</p>
+        </div>
+
+        <div class="custom-timer-container">
+          <button class="timer-mode-btn active" data-mode="pomodoro" data-minutes="25">meditate</button>
+          <button class="timer-mode-btn" data-mode="short" data-minutes="5">short break</button>
+          <button class="timer-mode-btn" data-mode="long" data-minutes="15">long break</button>
+        </div>
+
+        <div class="timer-display" id="timerDisplay">1:00:00</div>
+
+        <div class="timer-controls">
+          <button id="startTimer" class="main-btn">start</button>
+          <button id="resetTimer" class="icon-btn reset-btn" aria-label="Reset">↻</button>
+        </div>
+
+        <div class="custom-input-container">
+          <label for="customMinutes">Custom Timer (minutes):</label>
+          <input type="number" id="customMinutes" class="glass-input" min="1" max="180" value="25" />
+        </div>
+      </div>
+    </section>
+
+    <section id="journal" class="tabcontent" role="tabpanel" aria-labelledby="journal-tab">
+      <div class="card journal-card">
+        <h2> My Journal</h2>
+
+        <div class="journal-controls">
+          <select id="journalMood" aria-label="Select Mood">
+            <option value="any">Mood: Select</option>
+            <option value="😊">😊 Happy</option>
+            <option value="😐">😐 Neutral</option>
+            <option value="😢">😢 Sad</option>
+            <option value="😡">😡 Angry</option>
+            <option value="😴">😴 Tired</option>
+          </select>
+
+          <input id="journalSearch" type="search" placeholder="Search entries..." aria-label="Search journal entries" />
+
+          <div class="journal-action-row">
+            <button id="saveJournal" class="primary">Save Entry</button>
+            <button id="clearJournals" class="secondary">Clear All</button>
+          </div>
+        </div>
+
+        <textarea id="journalInput" placeholder="Write about your day and how you feel..."
+          aria-label="Journal entry input"></textarea>
+        <p class="autosave-note" id="autosaveNote" aria-live="polite">Autosave: Not saved</p>
+
+        <ul id="journalList" class="journal-list"></ul>
+      </div>
+    </section>
+
+    <section id="analysis" class="tabcontent" role="tabpanel" aria-labelledby="analysis-tab">
+      <div class="card">
+        <h2>Mood Insights</h2>
+        <p>Visualize your emotional journey over time.</p>
+        <canvas id="moodChart" style="max-width:100%; height: auto;"></canvas>
+        <div id="insightBox" class="insight-box">
+          <p><strong>Today's Insight:</strong> Based on your recent entries, your mood stability is high. Keep up
+            the
+            good work!</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="games" class="tabcontent" role="tabpanel" aria-labelledby="games-tab">
+      <div class="card">
+        <h2>Play & Unwind Games</h2>
+        <p>Short, calming games to reduce stress. Pick one to start and close when you're ready to continue.</p>
+
+        <div class="games-grid">
+          <div class="game-card">
+            <h3>Breathing Circle</h3>
+            <p>Guided breathing with a soothing animated circle.</p>
+            <button class="secondary small" data-game="breathing">Open</button>
+          </div>
+
+          <div class="game-card">
+            <h3>Bubble Pop</h3>
+            <p>Pop gentle bubbles - calming and satisfying.</p>
+            <button class="secondary small" data-game="bubble">Open</button>
+          </div>
+
+          <div class="game-card">
+            <div id="breathingCircle" class="breathing-circle" aria-hidden="true"></div>
+            <p id="breathingText">Ready to breathe</p>
+            <div class="game-controls">
+              <button id="startBreath" class="primary small">Start</button>
+              <button id="stopBreath" class="secondary small">Stop</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="bubble" class="game-panel" aria-hidden="true">
+          <div class="bubble-wrap">
+            <div id="bubbleArea" class="bubble-area" aria-label="Bubble pop area"></div>
+            <div class="game-controls">
+              <button id="spawnBubbles" class="primary small">Spawn Bubbles</button>
+              <button id="clearBubbles" class="secondary small">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="memory" class="game-panel" aria-hidden="true">
+          <div class="memory-wrap">
+            <div id="memoryGrid" class="memory-grid" role="grid" aria-label="Memory match"></div>
+            <div class="game-controls">
+    </section>
+
+    <section id="survey" class="tabcontent" role="tabpanel" aria-labelledby="survey-tab">
+      <div class="card">
+        <h2>Wellness Survey</h2>
+        <p>This is where your survey content would appear if it were a tab, but the navigation button redirects to a
+          separate page.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><a href="about.html" class="about-us">About MindEase</a></h3>
+        <p>MindEase is a peaceful space that helps students relax, recharge, and find balance through calming
+          musics, videos, mindful breathing plus meditation, journaling, chat with clara and simple wellness games.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:Mindeasee123@gmail.com">Mindeasee123@gmail.com</a></p>
+        <p>Phone: +91 9781159914</p>
+      </div>
+    </div>
+    <p class="copyright">Made with love and care for mental wellness | 2025 MindEase | BCM School Basant City</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

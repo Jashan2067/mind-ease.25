@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Post-Survey</title>
+    <link rel="stylesheet" href="survey.css">
+    <link rel="icon" type="image/png" href="logo-1.png">
+</head>
+
+<body>
+    <div class="survey-card">
+        <img src="logo-1.png" alt="MindEase Logo" class="logo-img">
+        <h1>Mental Wellness Post-Survey</h1>
+        <p class="intro">Your honest answers help us understand how our resources support emotional healing and
+            reflection. This short survey takes just a minute.</p>
+
+        <form id="surveyForm">
+            <div class="question">
+                <label>1. Do you often find yourself thinking about things you wish you had done differently in your
+                    past?</label>
+                <div class="options">
+                    <input type="radio" name="q1" value="2"> Yes
+                    <input type="radio" name="q1" value="0"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>2. Do memories of past mistakes or losses still cause you emotional pain?</label>
+                <div class="options">
+                    <input type="radio" name="q2" value="2"> Often
+                    <input type="radio" name="q2" value="1"> Sometimes
+                    <input type="radio" name="q2" value="0"> Never
+                </div>
+            </div>
+
+            <div class="question">
+                <label>3. Do you often feel overwhelmed by responsibilities or expectations in your personal or
+                    professional life?</label>
+                <div class="options">
+                    <input type="radio" name="q3" value="2"> Yes
+                    <input type="radio" name="q3" value="0"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>4. Do you worry frequently about what might happen in your future (e.g., finances, relationships,
+                    success)?</label>
+                <div class="options">
+                    <input type="radio" name="q4" value="2"> Often
+                    <input type="radio" name="q4" value="1"> Sometimes
+                    <input type="radio" name="q4" value="0"> Never
+                </div>
+            </div>
+
+            <div class="question">
+                <label>5. Do thoughts about the future make you feel anxious or uncertain rather than hopeful?</label>
+                <div class="options">
+                    <input type="radio" name="q5" value="2"> Often
+                    <input type="radio" name="q5" value="1"> Sometimes
+                    <input type="radio" name="q5" value="0"> Never
+                </div>
+            </div>
+
+            <div class="question open-ended">
+                <label>6. What part of your life do you most wish to heal or make peace with — your past, present, or
+                    future?</label>
+                <textarea name="q6" rows="4" placeholder="Type your reflection here..."></textarea>
+            </div>
+
+            <button type="submit">Submit Survey</button>
+        </form>
+
+        <div id="resultBox" class="hidden">
+            <h2>💖 Thank You!</h2>
+            <p>Your responses have been recorded. Below is your reflection score:</p>
+            <div id="scoreDisplay"></div>
+            <p id="scoreMessage"></p>
+            <button id="retryBtn">Take Again</button>
+        </div>
+    </div>
+
+    <script src="survey.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+/* Variables & Global Reset */
+:root {
+  --primary-color: #7B68AA;
+  --secondary-color: #FFB27D;
+  --bg-light: #FCF5ED;
+  --bg-dark: #F4E4CF;
+  --surface-color: #FFF9F0;
+  --text-dark: #2D1B3D;
+  --text-medium: #8B7A9C;
+  --text-light: #ffffff;
+  --glass: rgba(255, 249, 240, 0.5);
+  --shadow-light: 0 4px 15px rgba(123, 104, 170, 0.08);
+  --shadow-deep: 0 10px 30px rgba(123, 104, 170, 0.15);
+  --shadow-base: 0 10px 30px rgba(123, 104, 170, 0.12);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling with Background Image */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Enhanced Background Image with bg.png - More visible */
+  background:
+    linear-gradient(135deg, rgba(252, 245, 237, 0.4), rgba(244, 228, 207, 0.4)),
+    url("bg-main.jpg") center/cover no-repeat fixed;
+
+  color: var(--text-dark);
+  padding: 20px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Wrapper */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Header Content Styling - Enhanced Glassmorphism */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* Enhanced Glassmorphism effect - More transparent */
+  background: rgba(255, 249, 240, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+
+  height: 600px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(123, 104, 170, 0.15);
+  border-radius: 25px;
+
+  /* Subtle animation on load */
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo Styling - Enhanced */
+.logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 25px;
+
+  /* Enhanced Border */
+  border: 5px solid rgba(255, 249, 240, 0.8);
+  box-shadow: 0 8px 20px rgba(123, 104, 170, 0.25);
+
+  /* Smooth transition */
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.logo-img:hover {
+  transform: scale(1.1) rotate(5deg);
+  /* Enhanced glow effect */
+  border-color: rgba(255, 178, 125, 0.8);
+  box-shadow:
+    0 0 0 8px rgba(255, 178, 125, 0.2),
+    0 12px 35px rgba(255, 178, 125, 0.4),
+    0 0 60px rgba(255, 178, 125, 0.3);
+}
+
+/* MindEase Title - Enhanced with Gradient */
+.mind {
+  font-size: clamp(10px, 12vw, 60px);
+  font-weight: 800;
+  background-color: var(--text-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 5px 0 30px;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 2px 10px rgba(123, 104, 170, 0.3));
+  font-family: "Poppins", sans-serif;
+}
+
+/* Button Link Wrapper */
+a {
+  text-decoration: none;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Button Styling - Enhanced */
+button {
+  background: linear-gradient(135deg, #ffb17d73, #ff7f5f70);
+  color: #2D1B3D;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 178, 125, 0.4);
+  letter-spacing: 1.5px;
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 178, 125, 0.5);
+}
+
+/* Button active state for better mobile touch feedback */
+button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 3px 15px rgba(255, 178, 125, 0.4);
+}
+
+/* Responsive Design - Mobile First Approach */
+
+/* Extra Small Devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    background:
+      linear-gradient(135deg, rgba(252, 245, 237, 0.45), rgba(244, 228, 207, 0.45)),
+      url("bg-main.jpg") center/cover no-repeat fixed;
+  }
+
+  .header-content {
+    height: 350px;
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  .mind {
+    font-size: clamp(32px, 10vw, 50px);
+    margin: 5px 0 15px;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-img {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    border: 3px solid rgba(255, 249, 240, 0.7);
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 28px;
+    letter-spacing: 0.5px;
+  }
+
+  a {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+/* Small Devices (tablets, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    padding: 15px;
+    background:
+      linear-gradient(135deg, rgba(252, 245, 237, 0.4), rgba(244, 228, 207, 0.4)),
+      url("bg-main.jpg") center/cover no-repeat fixed;
+  }
+
+  .header-content {
+    height: 450px;
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .mind {
+    font-size: clamp(40px, 8vw, 65px);
+    margin: 5px 0 20px;
+  }
+
+  .logo-img {
+    width: 110px;
+    height: 110px;
+    margin: 20px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 14px 32px;
+  }
+}
+
+/* Medium Devices (landscape tablets, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-content {
+    height: 550px;
+    max-width: 900px;
+  }
+
+  .mind {
+    font-size: clamp(50px, 10vw, 75px);
+  }
+
+  .logo-img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Large Devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+  body {
+    padding: 30px;
+  }
+
+  .header-content {
+    border-radius: 25px;
+    margin: 20px auto;
+  }
+
+  a {
+    max-width: 450px;
+  }
+}
+
+/* Extra Large Devices (1400px and up) */
+@media (min-width: 1400px) {
+  .header-content {
+    max-width: 1400px;
+  }
+
+  .mind {
+    font-size: clamp(60px, 10vw, 80px);
+  }
+
+  .logo-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  button {
+    font-size: 24px;
+    padding: 18px 45px;
+  }
+}

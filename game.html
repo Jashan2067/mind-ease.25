@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play stress-relieving games including breathing exercises, bubble pop, memory match, and doodle pad">
+    <title>Stress Relief Games - MindEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="logo-1.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="games.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+            <h1 class="main-title">Stress Relief Games</h1>
+            <p class="subtitle">Choose a calming activity to relax your mind</p>
+        </div>
+    </header>
+
+    <main class="games-grid">
+        <!-- Breathing Circle Game -->
+        <div class="game-card" data-game="breathing">
+            <div class="card-icon">🫁</div>
+            <h2>Breathing Circle</h2>
+            <p>Follow the expanding circle to regulate your breathing</p>
+            <button class="play-button" onclick="openGame('breathing')">Play Now</button>
+        </div>
+
+        <!-- Bubble Pop Game -->
+        <div class="game-card" data-game="bubble">
+            <div class="card-icon">🫧</div>
+            <h2>Bubble Pop</h2>
+            <p>Pop floating bubbles to release tension and relax</p>
+            <button class="play-button" onclick="openGame('bubble')">Play Now</button>
+        </div>
+
+        <!-- Memory Match Game -->
+        <div class="game-card" data-game="memory">
+            <div class="card-icon">🎴</div>
+            <h2>Memory Match</h2>
+            <p>Match peaceful icons to exercise your mind gently</p>
+            <button class="play-button" onclick="openGame('memory')">Play Now</button>
+        </div>
+
+        <!-- Doodle Pad Game -->
+        <div class="game-card" data-game="doodle">
+            <div class="card-icon">🎨</div>
+            <h2>Doodle Pad</h2>
+            <p>Draw freely on a calming canvas to express yourself</p>
+            <button class="play-button" onclick="openGame('doodle')">Play Now</button>
+        </div>
+
+
+    </main>
+
+    <!-- Game Modals -->
+    <div id="breathing-modal" class="game-modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeGame('breathing')">×</button>
+            <h2>Breathing Circle</h2>
+            <p class="instruction">Follow the circle as it expands and contracts</p>
+            <div class="breathing-container">
+                <div class="breathing-circle">
+                    <div class="breathing-text">Breathe</div>
+                </div>
+                <div class="breathing-instruction">Inhale</div>
+            </div>
+            <button class="action-button" onclick="startBreathing()">Start Exercise</button>
+        </div>
+    </div>
+
+    <!-- Bubble Pop Modal -->
+    <div id="bubble-modal" class="game-modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeGame('bubble')">×</button>
+            <h2>Bubble Pop</h2>
+            <div class="score-display">Score: <span id="bubble-score">0</span></div>
+            <canvas id="bubble-canvas"></canvas>
+            <button class="action-button" onclick="startBubbles()">Start Popping</button>
+        </div>
+    </div>
+
+    <!-- Memory Match Modal -->
+    <div id="memory-modal" class="game-modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeGame('memory')">×</button>
+            <h2>Memory Match</h2>
+            <div class="game-stats">
+                <div class="stat">Moves: <span id="moves">0</span></div>
+                <div class="stat">Matches: <span id="matches">0</span></div>
+            </div>
+            <div id="memory-grid" class="memory-grid"></div>
+            <button class="action-button" onclick="startMemory()">New Game</button>
+        </div>
+    </div>
+
+    <!-- Doodle Pad Modal -->
+    <div id="doodle-modal" class="game-modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeGame('doodle')">×</button>
+            <h2>Doodle Pad</h2>
+            <div class="doodle-controls">
+                <input type="color" id="color-picker" value="#6366f1">
+                <input type="range" id="brush-size" min="1" max="20" value="5">
+                <button class="control-button" onclick="clearCanvas()">Clear</button>
+            </div>
+            <canvas id="doodle-canvas"></canvas>
+        </div>
+    </div>
+
+
+
+    <script src="game.js"></script>
+</body>
+
+</html>

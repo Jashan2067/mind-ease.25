@@ -1,0 +1,101 @@
+/* Background images for light and dark modes */
+
+/* Light mode background */
+body {
+    background: linear-gradient(135deg, rgba(240, 244, 248, 0.15), rgba(226, 232, 240, 0.15)), url('light-bg1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+/* Dark mode background */
+body.dark {
+    background: linear-gradient(135deg, rgba(36, 42, 56, 0.15), rgba(44, 51, 69, 0.15)), url('dark-bg2.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+/* Glassmorphism – Light mode */
+.card {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Glassmorphism – Dark mode */
+body.dark .card {
+    background: rgba(55, 62, 80, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Header */
+.site-header {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+body.dark .site-header {
+    background: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Footer */
+.site-footer {
+    background: rgba(255, 255, 255, 0.45) !important;
+}
+
+body.dark .site-footer {
+    background: rgba(55, 62, 80, 0.45) !important;
+}
+
+/* List items / journal items */
+.media-list li,
+.journal-item,
+.insight-box,
+.chat-window {
+    background: rgba(240, 244, 248, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+body.dark .media-list li,
+body.dark .journal-item,
+body.dark .insight-box,
+body.dark .chat-window {
+    background: rgba(44, 51, 69, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Journal input + selects */
+#journalInput,
+.journal-controls select,
+.journal-controls input[type=search] {
+    background: rgba(255, 255, 255, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+body.dark #journalInput,
+body.dark .journal-controls select,
+body.dark .journal-controls input[type=search] {
+    background: rgba(44, 51, 69, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navigation tabs */
+.main-nav .tablink {
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+body.dark .main-nav .tablink {
+    background: rgba(44, 51, 69, 0.35) !important;
+}
+
+.main-nav .tablink.active {
+    background: rgba(255, 112, 67, 0.75) !important;
+    /* decreased */
+}
+
+body.dark .main-nav .tablink.active {
+    background: rgba(255, 152, 112, 0.75) !important;
+    /* decreased */
+}
